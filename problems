@@ -1,0 +1,117 @@
+Q1.Write a function that returns the reverse of a string?
+Solution 1. 
+
+const string ='reactnative'
+const reverse=(str)=>{
+    let rev = ''
+    const arr = str.split('')
+    for(var i=arr.length-1 ; i>=0 ; i--){
+        rev = rev + arr[i]
+    }
+    return rev 
+   
+}
+
+console.log(reverse(string))
+
+Solution 2.
+
+const string ='reactnative'
+
+const reverse=(str)=>{
+    let rev = ''
+    
+    for(var i=str.length-1 ; i>=0 ; i--){
+        rev = rev + str[i]
+    }
+    return rev 
+   
+}
+
+console.log(reverse(string))
+
+Solution 3.
+
+const reverse =(str)=>{
+    return str.split('').reverse().join('')
+}
+
+console.log(reverse(str))
+******************************************************Question 2***************************************************************************
+Write a function that calculate factorial of a given number.
+solution 1.
+
+const num = 4;
+const factorial =(num)=>{
+    let fact = 1
+    for(var i=1 ;i<=num ; i++){
+        fact = fact*i
+    }
+    return fact
+}
+
+console.log(factorial(num))
+
+solution 2  (recursion)
+const num = 4;
+ let fac = 1
+const factorial =(num)=>{
+     fac = fac*num
+    if(num<=1) return fac
+  return  factorial(num-1)
+}
+
+console.log(factorial(num))
+
+********************************************************Question 3*************************************************************************
+Write a functoin that tells if provided year is a leap year or not
+solution 1.
+const year =1601
+
+const leapYear =(year)=>{
+    return year%4===0
+}
+
+console.log(leapYear(year));
+
+********************************************************Question 4*************************************************************************
+Write a function that calculates and prints the sum of the digits of a given number.
+Solution 1.
+
+  let s = 0 
+const sum=(n)=>{
+    if(n<=0) return s
+    s=s+n
+   return sum(n-1)
+}
+
+console.log(sum(5));
+
+solution 2.
+
+const sum=(n)=>{
+    let s=0
+    for(var i=0; i<=n;i++) s=s+i
+    return s
+}
+console.log(sum(10))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
