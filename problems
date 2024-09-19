@@ -77,25 +77,31 @@ console.log(leapYear(year));
 ********************************************************Question 4*************************************************************************
 Write a function that calculates and prints the sum of the digits of a given number.
 Solution 1.
-
-  let s = 0 
-const sum=(n)=>{
-    if(n<=0) return s
-    s=s+n
-   return sum(n-1)
+const num = 456 ;
+const sumOfDigit=(n)=>{
+    const string =n.toString()
+    console.log(typeof string)
+    const arr = string.split('')
+    console.log(arr);
+    let sum =0
+    for(var i=0;i<=arr.length-1 ; i++){
+        sum = sum + parseInt(arr[i]);
+    }
+    return sum;
 }
 
-console.log(sum(5));
 
-solution 2.
+console.log(sumOfDigit(num));
 
-const sum=(n)=>{
-    let s=0
-    for(var i=0; i<=n;i++) s=s+i
-    return s
+Solution 2.
+const num = 29 ;
+const sumOfDigit=(n)=>{
+    const string =n.toString()
+    let sum =0
+    for(var x of string) sum+=parseInt(x);
+    return sum;
 }
-console.log(sum(10))
-
+console.log(sumOfDigit(num));
 
 
 
