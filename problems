@@ -112,7 +112,17 @@ const sum=(n)=>{
 console.log(sum(digit))
 
 
+Solution 4.
+const num=145
+const sumOfDigits=(n)=>{
+    const arr= n.toString().split('')
+    const sum = arr.reduce((initial,first,index,arr)=>{
+       return initial+parseInt(first)
+    },0)
+    return sum
+}
 
+console.log(sumOfDigits(num))
 
 
 
