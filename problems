@@ -124,18 +124,173 @@ const sumOfDigits=(n)=>{
 
 console.log(sumOfDigits(num))
 
+**************************************Question 5***************************************************************
+
+what is th output of this 
+console.log(12**2)
+
+**************************************Question 6***************************************************************
+
+const test=()=>{
+    salary  = 200;
+    console.log(salary)
+}
+
+test() // output is 200 
+this means that salary is being treated as an implicit global variable. In strict mode, this would throw an error, but in non-strict mode,
+it creates a variable in the global scope.
+
+**************************************Question 7***************************************************************
+
+const test =()=>{
+    console.log(test.abc)
+}
+test();
+
+test.abc = 200
+test.abc = 400
+test();
+
+ In JavaScript, functions are objects, so you can add properties to them just like you would with any other object.
+You first set test.abc to 200, then you overwrite it and set test.abc to 400.
 
 
+**************************************Question 8***************************************************************
+console.log({}=={})
+console.log({}==={})
+
+why false ?
+
+New Object Instances: Each time you use {}, you are creating a new object instance. So, when you do {} == {} or {} === {},
+you are comparing two separate objects that have different references in memory.
+
+**************************************Question 9***************************************************************
+Shallow Copy
+A shallow copy creates a new object but does not create copies of nested objects.
+Instead, it copies references to the nested objects.
+This means that if the original object has nested objects,
+changes to those nested objects in the copied object will affect the original object.
+
+let original = {
+    name: 'Alice',
+    details: {
+        age: 25,
+        city: 'Wonderland'
+    }
+};
+
+let shallowCopy = { ...original };
+
+// Modifying the nested object in the shallow copy
+shallowCopy.details.age = 30;
+
+console.log(original.details.age); // Outputs: 30
+console.log(shallowCopy.details.age); // Outputs: 30
 
 
+Example of Deep Copy
+A deep copy creates a new object and recursively copies all nested objects.
+This means that changes to the nested objects in the copied object do not affect the original object.
+let original = {
+    name: 'Alice',
+    details: {
+        age: 25,
+        city: 'Wonderland'
+    }
+};
+
+// Create a deep copy
+let deepCopy = JSON.parse(JSON.stringify(original));
+
+// Modify the deep copy
+deepCopy.details.age = 30;
+
+console.log(original.details.age); // Outputs: 25 (original remains unchanged)
+console.log(deepCopy.details.age); // Outputs: 30 (deep copy reflects change)
 
 
+-------------------------
+const _ = require('lodash'); // Make sure to install lodash
+
+let original = {
+    name: 'Alice',
+    details: {
+        age: 25,
+        city: 'Wonderland',
+        hobbies: ['reading', 'traveling']
+    }
+};
+
+// Create a deep copy using Lodash
+let deepCopy = _.cloneDeep(original);
+
+// Modify the deep copy
+deepCopy.details.hobbies[0] = 'writing';
+
+console.log(original.details.hobbies[0]); // Outputs: 'reading' (original remains unchanged)
+console.log(deepCopy.details.hobbies[0]); // Outputs: 'writing' (deep copy reflects change)
+
+**************************************Question 10***************************************************************
+let a = {
+    name :'himanshu'
+}
+
+let b = {
+    ...a
+}
+console.log(b)
+b.name = 'shubham'
+console.log(a.name)
+
+**************************************Question 11***************************************************************
+let a = 10;
+let b = new Number(10);
+let c = 10
+
+console.log(a===b);
+console.log(b===c);
+The comparisons return false because a and c are primitive types,
+while b is an object. Strict equality requires both the type and value to match, and in this case, they do not.
 
 
+**************************************Question 12***************************************************************
 
+function test(record)
+{
+    if(record=={age:28}){
+        console.log('you are an adult');
+    }else if(record === {age:28}){
+        console.log('you are still an adult')
+    }else{
+        console.log('no records');
+    }
+}
 
+test({age:28})
+In JavaScript, objects are compared by reference, not by value. 
+This means that even if two objects have the same properties and values,
+they are considered different if they are not the same reference in memory.
 
+**************************************Question 13***************************************************************
+console.log(+true)
+The + operator is the unary plus operator, which converts its operand into a number.
+true is a boolean value. When converted to a number, true becomes 1.
+2. console.log(!'test');
+The ! operator is the logical NOT operator, which negates the truthiness of its operand.
+The string 'test' is a non-empty string, and in JavaScript, non-empty strings are considered truthy.
+When you apply the ! operator to a truthy value, it converts it to false.
 
+**************************************Question 14***************************************************************
+create a fn 
 
+let str = 'abcdef';
+let str2 = 123;
 
+// output a1b2c3def
+
+let str = 'abc'
+let str = 123456
+// output  a1b2c3456
+console.log(compare('abcdef',123));
+console.log(compare('abc',123456));
 
