@@ -294,3 +294,14 @@ let str = 123456
 console.log(compare('abcdef',123));
 console.log(compare('abc',123456));
 
+**************************************Question 15***************************************************************
+
+1.Advantage of react.
+2.React native localisation.
+3.Life cycle methods.
+4.synthetic events.
+5. Drawback of react native
+6. React native testing.
+7.Unit testing.
+8.CI/CD pipeline
+
