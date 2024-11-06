@@ -305,3 +305,93 @@ console.log(compare('abc',123456));
 7.Unit testing.
 8.CI/CD pipeline
 
+
+**************************************Question 16***************************************************************
+
+ Write a JavaScript program to get the current date.  
+Expected Output :
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+solution: 
+
+const time =()=>{
+     const date = new Date();
+     var dd = date.getDate();
+     var month = date.getMonth();
+     var year = date.getFullYear();
+       if(dd <= 9){
+            dd = `0${dd}`
+       }
+    return `${dd}-${month}-${year}`;
+}
+console.log(time());
+
+
+**************************************Question 17***************************************************************
+
+// 1. Write a JavaScript program to compare two objects to determine if the first contains equivalent property values to the second one.
+
+
+const matches =(obj1, obj2)=>{
+//   const output =  Object.keys(obj2).every((item)=>obj1.hasOwnProperty(item))
+    const output =  Object.keys(obj1).every((item)=>obj2.hasOwnProperty(item) && obj1[item] === obj2[item])
+   console.log(output);
+   return output
+}
+
+
+console.log(matches({ hair: 'long', beard: true }, 
+{ age: 26, hair: 'long', beard: true }));
+
+
+**************************************Question 18***************************************************************
+
+
+//Write a JavaScript program to target a given value in a nested JSON object based on the given key.
+// Use the in operator to check if target exists in obj.
+ //If found, return the value of obj[target].
+//Otherwise use Object.values(obj) and Array.prototype.reduce() to recursively call dig on each nested object until the first matching key/value pair is found.
+
+const data = {
+  level1: {
+    level2: {
+      level3: 'some data'
+    }
+  }
+};
+
+const test=(dd,target)=>{
+     console.log('dd',dd)
+   const keyExist = target in dd
+   console.log('keyExist',keyExist)
+   if(keyExist){
+        return dd[target];
+   }else{
+     return   Object.values(dd).reduce((acc , val )=>{
+           console.log('acc',acc)
+           if(acc !== undefined) return acc 
+           if (typeof val === 'object') return test(val,target)
+       },undefined)
+   }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
