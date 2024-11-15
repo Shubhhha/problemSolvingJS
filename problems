@@ -383,7 +383,13 @@ const test=(dd,target)=>{
 
 
 
+**************************************Question 19***************************************************************
+Que. find out the lowwest and highest of the string ->     IS IT THE COADING
+o/p -> lowest {'IS','IT'} , highest {'coading'}
 
+Que. a = [1,4,6,1,3,6,4,5,7,3,4,6 ,3]
+ifk=3 o/p [3,4]
+if k=2 o/p [1] because 1 is 2 time
 
 
 
